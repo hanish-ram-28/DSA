@@ -1,0 +1,101 @@
+//1)Generic Template
+int i = 0;
+
+for (int j = 0; j < n; j++) {
+
+    // Step 1: include nums[j]
+
+    while (window_invalid) {
+
+        // Step 2: remove nums[i]
+        i++;
+    }
+
+    // Step 3: update answer
+}
+//2)Fixed Size
+int i = 0;
+int windowSum = 0;
+
+for (int j = 0; j < n; j++) {
+
+    windowSum += nums[j];
+
+    if (j - i + 1 > k) {
+        windowSum -= nums[i];
+        i++;
+    }
+
+    if (j - i + 1 == k) {
+        // process answer
+    }
+}
+//3)Max Window
+int i = 0;
+int ans = 0;
+
+for (int j = 0; j < n; j++) {
+
+    // include nums[j]
+
+    while (window_invalid) {
+
+        // remove nums[i]
+        i++;
+    }
+
+    ans = max(ans, j - i + 1);
+}
+//4)Min Window
+int i = 0;
+int minLen = INT_MAX;
+
+for (int j = 0; j < n; j++) {
+
+    // include nums[j]
+
+    while (window_valid) {
+
+        minLen = min(minLen, j - i + 1);
+
+        // remove nums[i]
+        i++;
+    }
+}
+//5)Counting Subarrys
+long long count = 0;
+int i = 0;
+
+for (int j = 0; j < n; j++) {
+
+    // add nums[j]
+
+    while (window_invalid) {
+
+        // remove nums[i]
+        i++;
+    }
+
+    count += (j - i + 1);
+}
+6)Exactly K 
+int solve(vector<int>& nums, int k) {
+    int i = 0;
+    long long cnt = 0;
+
+    for (int j = 0; j < nums.size(); j++) {
+
+        // include
+
+        while (invalid) {
+            // remove
+            i++;
+        }
+
+        cnt += j - i + 1;
+    }
+
+    return cnt;
+}
+
+return solve(nums, k) - solve(nums, k - 1);
